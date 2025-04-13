@@ -20,10 +20,11 @@ body {
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 999; /* Ensure the navbar stays on top during scroll */
+  z-index: 999; /* Ensure the navbar stays on top */
 }
 .brand {
-  font-family: 'Montserrat', sans-serif;
+  /* Use the elegant serif for the brand/title */
+  font-family: 'Playfair Display', serif;
   font-size: 1.5em;
   font-weight: 700;
   color: #FFFFFF;
@@ -39,6 +40,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif; /* Keep sans for smaller text */
 }
 .nav-menu a:hover {
   text-decoration: underline;
@@ -54,23 +56,19 @@ body {
 
 /* Hero Section (Parallax) */
 .hero {
-  /* Ensure the section fills at least one viewport height for strong parallax effect */
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
   /* Parallax background image */
   background: url('assets/hero-bg.jpg') no-repeat center center;
   background-size: cover;
-  background-attachment: fixed; /* This is the key for parallax in CSS */
+  background-attachment: fixed;
 }
-
-/* Foreground content in hero section */
 .hero-content {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* A white overlay with slight transparency */
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent overlay */
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -82,7 +80,7 @@ body {
   margin-bottom: 20px;
 }
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif; /* Elegant font for heading */
   font-size: 2.5em;
   color: #0F40A1;
   margin-bottom: 0.5em;
@@ -102,7 +100,7 @@ body {
   border-radius: 4px;
 }
 .btn-primary:hover {
-  background-color: #0c3580; /* darker blue on hover */
+  background-color: #0c3580;
 }
 
 /* Sections (About, Plan a Visit, Contact) */
@@ -111,7 +109,7 @@ body {
   text-align: center;
 }
 .section h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Playfair Display', serif; /* Use elegant font for headings */
   font-size: 2em;
   color: #0F40A1;
   margin-bottom: 20px;
@@ -120,6 +118,7 @@ body {
   max-width: 600px;
   margin: 0 auto 20px auto;
   font-size: 1.1em;
+  font-family: 'Open Sans', sans-serif; /* Keep body text in Open Sans */
 }
 .section ul {
   text-align: left;
@@ -179,17 +178,17 @@ footer {
     text-align: center;
   }
   .hero-content {
-    margin: 0 20px; /* small padding on mobile screens */
+    margin: 0 20px;
   }
 }
 
 /* Fade-in Effect */
 .fade-in-element {
-  opacity: 0;          /* elements start invisible */
-  transform: translateY(40px); /* slightly below final position */
+  opacity: 0;           
+  transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .fade-in-element.show {
-  opacity: 1;          /* fade to visible */
-  transform: translateY(0);   /* move to final position */
+  opacity: 1;          
+  transform: translateY(0);
 }
