@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF;
+  background: #FFFFFF; /* The hero section overrides this with a parallax image. */
 }
 
 /* -------------------------
@@ -120,9 +120,12 @@ body {
 }
 
 /* -------------------------
-   Sections
+   Sections (Now with
+   polished "silver ivory"
+   background)
 -------------------------- */
 .section {
+  background-color: #F5F5F5; /* <--- The new background color */
   padding: 60px 20px;
   text-align: center;
 }
@@ -157,15 +160,17 @@ body {
   color: #0F40A1;
   text-decoration: none;
 }
+
 #contact a:hover {
   text-decoration: underline;
 }
 
 /* -------------------------
-   Footer
+   Footer (Optionally match
+   the same background)
 -------------------------- */
 footer {
-  background-color: #f4f4f4;
+  background-color: #F5F5F5; /* <--- Matches the sections */
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
@@ -221,6 +226,7 @@ footer {
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 .fade-in-element.show {
   opacity: 1;
   transform: translateY(0);
