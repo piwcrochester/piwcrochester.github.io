@@ -11,6 +11,13 @@
   />
   <!-- Site CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Enable smooth scrolling for anchor link navigation -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
@@ -26,22 +33,24 @@
     </ul>
   </nav>
 
-  <!-- Home Section (Hero) -->
-  <section id="home" class="hero">
-    <!-- Large Logo and Welcome Message -->
-    <img src="assets/roccity-logo.png" alt="ROC City Church logo" class="hero-logo" />
-    <h1>Welcome to Rochester City Church</h1>
-    <p>Join us this Sunday at 10 AM for worship and fellowship.</p>
-    <!-- Call-to-action button to YouTube livestream -->
-    <a href="#" class="btn-primary" target="_blank" rel="noopener">Watch Live on YouTube</a>
-    <!-- (Replace # with the actual YouTube livestream link) -->
+  <!-- Home Section (Hero) with Parallax Background -->
+  <section id="home" class="hero fade-in-element">
+    <!-- Foreground Content -->
+    <div class="hero-content">
+      <img src="assets/roccity-logo.png" alt="ROC City Church logo" class="hero-logo" />
+      <h1>Welcome to ROC City Church</h1>
+      <p>Join us this Sunday at 10 AM for worship and fellowship.</p>
+      <!-- Call-to-action button to YouTube livestream -->
+      <a href="#" class="btn-primary" target="_blank" rel="noopener">Watch Live on YouTube</a>
+      <!-- (Replace # with the actual YouTube livestream link) -->
+    </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="section fade-in-element">
     <h2>About Us</h2>
     <p>
-      Rochester City Church is a community of believers serving the Rochester area. We are part of the Buffalo District of the Church of Pentecost, USA Inc. We
+      Roc City Church is a community of believers serving the Rochester area. We
       are committed to helping people grow in faith and be known by our love for
       one another. Our mission is to provide a welcoming environment where
       everyone can experience the love of God.
@@ -49,7 +58,7 @@
   </section>
 
   <!-- Plan a Visit Section -->
-  <section id="visit" class="section">
+  <section id="visit" class="section fade-in-element">
     <h2>Plan a Visit</h2>
     <p>We’d love to have you join us! Here’s what you can expect when you visit:</p>
     <ul>
@@ -63,7 +72,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section">
+  <section id="contact" class="section fade-in-element">
     <h2>Contact Us</h2>
     <p>
       <strong>Email:</strong>
@@ -77,10 +86,10 @@
 
   <!-- Optional: Footer -->
   <footer>
-    <p>&copy; 2025 Rochester City Church. All rights reserved.</p>
+    <p>&copy; 2025 ROC City Church. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for mobile menu toggle -->
+  <!-- JavaScript for animations and mobile menu toggle -->
   <script src="script.js"></script>
 </body>
 </html>
