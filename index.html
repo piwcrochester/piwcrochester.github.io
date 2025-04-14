@@ -5,23 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rochester City Church</title>
 
-  <!-- Favicon (Tab Icon) -->
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/roccity-logo.png"
-  />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/roccity-logo.png" />
 
-  <!-- Google Font: Montserrat -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Site CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Smooth Scrolling (optional) -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -33,18 +25,14 @@
   <!-- NAVIGATION BAR -->
   <nav class="navbar">
     <div class="brand">
-      <!-- Logo is clickable -->
       <a href="#home">
         <img src="assets/white-svg.svg" alt="Church logo" class="brand-logo" />
       </a>
-      <!-- White text next to logo, not clickable -->
       <span class="brand-text">Rochester City Church</span>
     </div>
 
-    <!-- Mobile nav toggle (hamburger) -->
     <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
 
-    <!-- Nav Menu -->
     <ul class="nav-menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -53,72 +41,66 @@
     </ul>
   </nav>
 
-  <!-- HERO SECTION (Ken Burns) -->
+  <!-- HERO SECTION -->
   <section id="home" class="hero fade-in-element">
     <div class="slideshow">
-      <!-- Two slides for the crossfade -->
       <div class="slide slide1"></div>
       <div class="slide slide2"></div>
     </div>
-
-    <!-- Hero Content -->
     <div class="hero-content">
-      <!-- The hero image -->
       <img src="assets/roccity-logo.png" alt="Rochester City Church logo" class="hero-logo" />
-
       <h1>Welcome to Rochester City Church</h1>
       <p>Join us this Sunday at 10 AM for worship and fellowship.</p>
-      <!-- Replace # with your YouTube link -->
-      <a href="#" class="btn-primary" target="_blank" rel="noopener">
-        Watch Live on YouTube
-      </a>
+      <a href="#" class="btn-primary" target="_blank" rel="noopener">Watch Live on YouTube</a>
     </div>
   </section>
 
-  <!-- ABOUT (White) -->
+  <!-- ABOUT SECTION -->
   <section id="about" class="fade-in-element">
-    <h2>About Us</h2>
-    <p>
-      Rochester City Church is a community of believers serving the Rochester area. 
-       We are committed to helping people grow in faith and be known by our love for 
-       one another. Our mission is to provide a welcoming environment where 
-       everyone can experience the love of God.
-    </p>
+    <div class="section-inner">
+      <h2>About Us</h2>
+      <p>
+        Rochester City Church is a community of believers serving the Rochester area.
+        We are committed to helping people grow in faith and be known by our love for one another.
+        Our mission is to provide a welcoming environment where everyone can experience the love of God.
+      </p>
+    </div>
   </section>
 
-  <!-- PLAN A VISIT (Ivory) -->
+  <!-- PLAN A VISIT SECTION -->
   <section id="visit" class="fade-in-element">
-    <h2>Plan a Visit</h2>
-    <p>We’d love to have you join us! Here’s what you can expect when you visit:</p>
-    <ul>
-      <li><strong>Sunday Service:</strong> 10:00 AM – 12:00 PM</li>
-      <li><strong>Wednesday (Search the Scriptures):</strong> 8:00 PM – 9:30 PM</li>
-      <li><strong>Friday (Prayer Meeting):</strong> 7:00 PM – 8:30 PM</li>
-      <li><strong>Location:</strong> 159 Alexander St, Rochester, NY 14607</li>
-      <li><strong>Atmosphere:</strong> Casual and welcoming – come as you are.</li>
-      <li><strong>Kids:</strong> Children are welcome; we offer a fun, safe kids program.</li>
-    </ul>
+    <div class="section-inner">
+      <h2>Plan a Visit</h2>
+      <p>We’d love to have you join us! Here’s what you can expect when you visit:</p>
+      <ul>
+        <li><strong>Sunday Service:</strong> 10:00 AM – 12:00 PM</li>
+        <li><strong>Wednesday (Search the Scriptures):</strong> 8:00 PM – 9:30 PM</li>
+        <li><strong>Friday (Prayer Meeting):</strong> 7:00 PM – 8:30 PM</li>
+        <li><strong>Location:</strong> 159 Alexander St, Rochester, NY 14607</li>
+        <li><strong>Atmosphere:</strong> Casual and welcoming – come as you are.</li>
+        <li><strong>Kids:</strong> Children are welcome; we offer a fun, safe kids program.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- CONTACT (Black) -->
+  <!-- CONTACT SECTION -->
   <section id="contact" class="fade-in-element">
-    <h2>Contact Us</h2>
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:piwcrochester1@gmail.com">piwcrochester1@gmail.com</a>
-    </p>
-    <p>
-      <strong>Location:</strong>
-      159 Alexander St, Rochester, NY 14607
-    </p>
+    <div class="section-inner">
+      <h2>Contact Us</h2>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:piwcrochester1@gmail.com">piwcrochester1@gmail.com</a>
+      </p>
+      <p><strong>Location:</strong> 159 Alexander St, Rochester, NY 14607</p>
+    </div>
   </section>
 
-  <!-- FOOTER (Black) -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Rochester City Church. All rights reserved.</p>
   </footer>
 
-  <!-- Enable the script for fade-in & nav toggle -->
+  <!-- SCRIPT -->
   <script src="script.js"></script>
 </body>
 </html>
