@@ -1,27 +1,31 @@
 /* 
-  Key changes for:
-  - brand-text color: white
-  - brand-logo width: 80px (twice the size from 40px)
+   Key points:
+   - brand-text is white (#FFFFFF)
+   - brand-logo is 80px wide (double the old 40px)
+   - Page icon is set in index.html via <link rel="icon" ...>
 */
+
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF;
+  background: #FFFFFF; /* non-hero areas */
 }
 
-/* Navigation Bar */
+/* -------------------------
+   Navigation Bar
+-------------------------- */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0F40A1; 
+  background-color: #0F40A1;
   padding: 10px 20px;
   position: sticky;
   top: 0;
@@ -33,32 +37,32 @@ body {
   align-items: center;
 }
 
-/* Only the logo is clickable */
+/* LOGO (clickable) */
 .brand a {
   display: inline-flex;
   align-items: center;
-  text-decoration: none;
+  text-decoration: none; /* no underline */
 }
 
 /* 
-  Twice the old size 
-  from 40px -> 80px 
+   Double from 40px -> 80px 
+   Turn black lines white if needed
 */
 .brand-logo {
-  width: 80px; 
+  width: 80px;
   height: auto;
   margin-right: 10px;
-  filter: brightness(0) invert(1); /* Turn black lines to white if needed */
+  filter: brightness(0) invert(1);
 }
 
-/* White brand text */
+/* White text, not clickable */
 .brand-text {
   font-weight: 700;
   font-size: 1.5em;
-  color: #FFFFFF; /* <--- White text */
+  color: #FFFFFF;
 }
 
-/* Nav toggle & menu */
+/* Nav toggle (hidden on desktop) */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
@@ -68,6 +72,7 @@ body {
   cursor: pointer;
 }
 
+/* Nav menu (links) */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -87,7 +92,10 @@ body {
   text-decoration: underline;
 }
 
-/* Hero Section */
+/* -------------------------
+   Hero Section
+   Ken Burns Crossfade
+-------------------------- */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -99,45 +107,46 @@ body {
 
 .slideshow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: 1;
 }
 
 .slide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background-position: center;
   background-size: cover;
 }
 
-/* Ken Burns crossfade */
+/* Slide 1: hero-bg.jpg */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
 }
 
+/* Keyframes for slide1 crossfade */
 @keyframes fade1 {
-  0% { opacity: 1; transform: scale(1); }
-  45% { opacity: 1; transform: scale(1.08); }
-  55% { opacity: 0; transform: scale(1.08); }
+  0%   { opacity: 1; transform: scale(1); }
+  45%  { opacity: 1; transform: scale(1.08); }
+  55%  { opacity: 0; transform: scale(1.08); }
   100% { opacity: 0; transform: scale(1); }
 }
 
+/* Slide 2: second-slide.png */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
 }
 
+/* Keyframes for slide2 crossfade */
 @keyframes fade2 {
   0%, 45% { opacity: 0; transform: scale(1); }
-  55% { opacity: 1; transform: scale(1); }
-  100% { opacity: 1; transform: scale(1.08); }
+  55%     { opacity: 1; transform: scale(1); }
+  100%    { opacity: 1; transform: scale(1.08); }
 }
 
+/* Content overlay in hero */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -177,30 +186,29 @@ body {
   font-weight: 600;
   border-radius: 4px;
 }
-
 .btn-primary:hover {
   background-color: #0c3580;
 }
 
-/* About, Plan a Visit, Contact, Footer */
-#about, #visit, #contact {
+/* -------------------------
+   About, Visit, Contact, Footer
+-------------------------- */
+#about {
+  background-color: #FFFFFF;
   padding: 60px 20px;
   text-align: center;
 }
-
-#about {
-  background-color: #FFFFFF;
-}
-
 #visit {
   background-color: #F2F2EC;
+  padding: 60px 20px;
+  text-align: center;
 }
-
 #contact {
   background-color: #000000;
+  padding: 60px 20px;
+  text-align: center;
   color: #FFFFFF;
 }
-
 footer {
   background-color: #000000;
   text-align: center;
@@ -209,19 +217,23 @@ footer {
   color: #FFFFFF;
 }
 
-/* Mobile / Responsive */
+/* -------------------------
+   Mobile Responsive
+-------------------------- */
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
   .nav-menu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
+    background-color: #0F40A1;
     width: 100%;
     flex-direction: column;
-    background-color: #0F40A1;
     padding: 10px 0;
   }
-
   .nav-menu li {
     margin: 10px 0;
     text-align: center;
@@ -229,30 +241,25 @@ footer {
   .nav-menu.open {
     display: flex;
   }
-
-  .nav-toggle {
-    display: block;
-  }
-
   #about, #visit, #contact {
     text-align: left;
   }
   #about h2, #visit h2, #contact h2 {
     text-align: center;
   }
-
   .hero-content {
     margin: 0 20px;
   }
 }
 
-/* Fade-in on Scroll */
+/* -------------------------
+   Fade-in on Scroll
+-------------------------- */
 .fade-in-element {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in-element.show {
   opacity: 1;
   transform: translateY(0);
