@@ -63,8 +63,7 @@ body {
 }
 
 /* -------------------------
-   Hero Section
-   with Slideshow
+   Hero Section + Crossfade
 -------------------------- */
 .hero {
   position: relative;
@@ -72,21 +71,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* no single background here, slideshow handles images */
-  overflow: hidden; /* so no scrollbars appear if images overflow */
+  overflow: hidden; 
 }
 
-/* Slideshow container */
+/* Slideshow container (2 slides) */
 .slideshow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* slides are behind .hero-content (which has z-index 2) */
+  z-index: 1; /* behind .hero-content */
 }
 
-/* Each slide (absolute) covers the full hero area */
 .slide {
   position: absolute;
   top: 0; 
@@ -95,36 +92,40 @@ body {
   height: 100%;
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  animation: fade 8s infinite;
 }
 
-/* First image (immediate start) */
+/* Slide 1 and 2 each have their own keyframes 
+   so we can ensure NO white gap during crossfade */
+
+/* Slide 1: visible first half of the cycle */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
+  animation: fade1 16s infinite;
 }
 
-/* Second image (starts halfway through the cycle) */
+@keyframes fade1 {
+  /* Show from 0% to 45% */
+  0%, 45% { opacity: 1; }
+  /* Crossfade out from 45% to 55% */
+  55%, 100% { opacity: 0; }
+}
+
+/* Slide 2: visible second half of the cycle */
 .slide2 {
   background-image: url('assets/second-slide.png');
-  animation-delay: 4s;
+  animation: fade2 16s infinite;
 }
 
-/* Keyframes for crossfade: 
-   - 8-second total cycle
-   - each image fades in (5%) and stays, then fades out (50%)
-*/
-@keyframes fade {
-  0%   { opacity: 0; }
-  5%   { opacity: 1; }
-  45%  { opacity: 1; }
-  50%  { opacity: 0; }
-  100% { opacity: 0; }
+@keyframes fade2 {
+  /* Hide from 0% to 45% */
+  0%, 45% { opacity: 0; }
+  /* Crossfade in from 45% to 55% */
+  55%, 100% { opacity: 1; }
 }
 
-/* Hero content on top of slideshow */
+/* Hero content on top of slides */
 .hero-content {
-  position: relative; /* ensures above z-index 1 */
+  position: relative;
   z-index: 2;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
