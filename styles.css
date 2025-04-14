@@ -28,10 +28,47 @@ body {
   z-index: 999;
 }
 
+/* Brand Container */
 .brand {
+  /* No special styles needed unless you want extra spacing */
+}
+
+/* Brand link (logo + text side-by-side, clickable to #home) */
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none; /* no underline */
+}
+
+/* The SVG logo (white-svg.svg) next to the brand text */
+.brand-logo {
+  width: 30px;  /* adjust if you want bigger/smaller */
+  height: auto;
+  margin-right: 8px;
+  /* Convert black SVG to white (on the deep blue background) */
+  filter: brightness(0) invert(1);
+}
+
+/* Brand text remains white to match nav background */
+.brand-link span {
   font-weight: 700;
   font-size: 1.5em;
   color: #FFFFFF;
+}
+
+/* Remove underline on hover */
+.brand-link:hover,
+.brand-link:focus {
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5em;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
 .nav-menu {
@@ -53,15 +90,6 @@ body {
   text-decoration: underline;
 }
 
-.nav-toggle {
-  display: none;
-  font-size: 1.5em;
-  background: none;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
 /* -------------------------
    Hero Section
    Ken Burns Crossfade
@@ -75,7 +103,7 @@ body {
   overflow: hidden;
 }
 
-/* Slideshow container: 2 slides overlayed */
+/* Slideshow container: 2 slides overlaid */
 .slideshow {
   position: absolute;
   top: 0;
@@ -96,19 +124,14 @@ body {
 }
 
 /* Slide 1: hero-bg.jpg
-   Visible first half of 16s, with slight zoom */
+   Visible first half of 16s, zooming in slightly */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
 }
 
-/* 
-  fade1: 
-  - 0% to 45%: fully visible, scale from 1 to ~1.08
-  - 45% to 55%: crossfade out (opacity 1 to 0)
-  - 55% to 100%: invisible (scale can reset)
-*/
 @keyframes fade1 {
+  /* 0%->45%: visible, scale up a bit */
   0% {
     opacity: 1;
     transform: scale(1);
@@ -117,10 +140,12 @@ body {
     opacity: 1;
     transform: scale(1.08);
   }
+  /* 45%->55%: fade out */
   55% {
     opacity: 0;
     transform: scale(1.08);
   }
+  /* 55%->100%: invisible */
   100% {
     opacity: 0;
     transform: scale(1);
@@ -134,21 +159,18 @@ body {
   animation: fade2 16s infinite;
 }
 
-/*
-  fade2:
-  - 0% to 45%: invisible
-  - 45% to 55%: crossfade in (opacity 0 to 1)
-  - 55% to 100%: fully visible, scale from 1 to ~1.08
-*/
 @keyframes fade2 {
+  /* 0%->45%: invisible */
   0%, 45% {
     opacity: 0;
     transform: scale(1);
   }
+  /* 45%->55%: crossfade in */
   55% {
     opacity: 1;
     transform: scale(1);
   }
+  /* 55%->100%: visible, scale up */
   100% {
     opacity: 1;
     transform: scale(1.08);
