@@ -1,8 +1,8 @@
-/* 
-   - White text “Rochester City Church” in navbar
-   - Logo is 80px wide, clickable
-   - Ken Burns hero slideshow (hero-bg.jpg & second-slide.png)
-   - About (white), Plan a Visit (ivory), Contact (black), black footer
+/*
+   - White nav text, 80px logo
+   - Ken Burns hero
+   - fade-in-element hidden by default, become visible with .show
+   - About = white, Visit = ivory, Contact = black, black footer
 */
 
 * {
@@ -18,9 +18,7 @@ body {
   background: #FFFFFF;
 }
 
-/* -------------------------
-   NAVBAR
--------------------------- */
+/* NAVBAR */
 .navbar {
   display: flex;
   align-items: center;
@@ -31,28 +29,21 @@ body {
   top: 0;
   z-index: 999;
 }
-
 .brand {
   display: flex;
   align-items: center;
 }
-
-/* Only the logo is clickable */
 .brand a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
 }
-
-/* 80px wide, invert black lines to white (if the SVG is black) */
 .brand-logo {
   width: 80px;
   height: auto;
   margin-right: 10px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* If your SVG lines are black, turns them white */
 }
-
-/* White text, not clickable */
 .brand-text {
   font-weight: 700;
   font-size: 1.5em;
@@ -69,7 +60,6 @@ body {
   cursor: pointer;
 }
 
-/* Nav Menu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -86,9 +76,7 @@ body {
   text-decoration: underline;
 }
 
-/* -------------------------
-   HERO (Ken Burns)
--------------------------- */
+/* HERO (Ken Burns) */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -97,25 +85,19 @@ body {
   justify-content: center;
   overflow: hidden;
 }
-
 .slideshow {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   z-index: 1;
 }
-
 .slide {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100%; height: 100%;
   background-position: center;
   background-size: cover;
 }
-
-/* Slide 1: hero-bg.jpg */
+/* Slide 1 (hero-bg.jpg) */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
@@ -126,8 +108,7 @@ body {
   55%  { opacity: 0; transform: scale(1.08); }
   100% { opacity: 0; transform: scale(1); }
 }
-
-/* Slide 2: second-slide.png */
+/* Slide 2 (second-slide.png) */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
@@ -147,27 +128,23 @@ body {
   border-radius: 8px;
   max-width: 600px;
 }
-
 .hero-logo {
   max-width: 150px;
   width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
-
 .hero h1 {
   font-weight: 700;
   font-size: 2.5em;
   color: #0F40A1;
   margin-bottom: 0.5em;
 }
-
 .hero p {
   font-size: 1.1em;
   margin-bottom: 1em;
   color: #333;
 }
-
 .btn-primary {
   display: inline-block;
   padding: 0.75em 1.5em;
@@ -181,28 +158,23 @@ body {
   background-color: #0c3580;
 }
 
-/* -------------------------
-   About, Visit, Contact, Footer
--------------------------- */
+/* SECTIONS */
 #about {
   background-color: #FFFFFF;
   padding: 60px 20px;
   text-align: center;
 }
-
 #visit {
   background-color: #F2F2EC;
   padding: 60px 20px;
   text-align: center;
 }
-
 #contact {
   background-color: #000000;
   padding: 60px 20px;
   text-align: center;
   color: #FFFFFF;
 }
-
 footer {
   background-color: #000000;
   text-align: center;
@@ -211,9 +183,7 @@ footer {
   color: #FFFFFF;
 }
 
-/* -------------------------
-   Mobile / Responsive
--------------------------- */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -246,9 +216,7 @@ footer {
   }
 }
 
-/* -------------------------
-   Fade-in on Scroll
--------------------------- */
+/* FADE-IN ON SCROLL */
 .fade-in-element {
   opacity: 0;
   transform: translateY(40px);
