@@ -28,13 +28,14 @@ body {
   z-index: 999;
 }
 
-/* Brand Container */
+/* Brand container */
 .brand {
-  /* No special styles needed unless you want extra spacing */
+  display: flex;
+  align-items: center;
 }
 
-/* Brand link (logo + text side-by-side, clickable to #home) */
-.brand-link {
+/* The clickable logo only */
+.brand a {
   display: inline-flex;
   align-items: center;
   text-decoration: none; /* no underline */
@@ -49,19 +50,14 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* Brand text remains white to match nav background */
-.brand-link span {
+/* The text is NOT clickable, so it’s outside the anchor */
+.brand-text {
   font-weight: 700;
   font-size: 1.5em;
   color: #FFFFFF;
 }
 
-/* Remove underline on hover */
-.brand-link:hover,
-.brand-link:focus {
-  text-decoration: none;
-}
-
+/* Navigation toggle & menu */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
