@@ -25,7 +25,14 @@
 
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="brand">Rochester City Church</div>
+    <!-- Brand with logo + text linked to #home -->
+    <div class="brand">
+      <a href="#home" class="brand-link">
+        <img src="assets/white-svg.svg" alt="Church logo" class="brand-logo" />
+        <span>Rochester City Church</span>
+      </a>
+    </div>
+
     <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav-menu">
       <li><a href="#home">Home</a></li>
@@ -35,11 +42,9 @@
     </ul>
   </nav>
 
-  <!-- Hero Section (Ken Burns crossfade slideshow) -->
+  <!-- Hero Section (Ken Burns Crossfade) -->
   <section id="home" class="hero fade-in-element">
-    <!-- Overlaid slideshow container -->
     <div class="slideshow">
-      <!-- Each slide has its own animation -->
       <div class="slide slide1"></div>
       <div class="slide slide2"></div>
     </div>
