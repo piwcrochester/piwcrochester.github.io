@@ -1,8 +1,8 @@
-/*
-   - White text “Rochester City Church”
-   - Navbar logo is 80px wide
-   - Ken Burns hero (16s crossfade & slight zoom)
-   - About (white), Plan a Visit (silver ivory), Contact (black), black footer
+/* 
+   - White text “Rochester City Church” in navbar
+   - Logo is 80px wide, clickable
+   - Ken Burns hero slideshow (hero-bg.jpg & second-slide.png)
+   - About (white), Plan a Visit (ivory), Contact (black), black footer
 */
 
 * {
@@ -19,7 +19,7 @@ body {
 }
 
 /* -------------------------
-   Navbar
+   NAVBAR
 -------------------------- */
 .navbar {
   display: flex;
@@ -44,7 +44,7 @@ body {
   text-decoration: none;
 }
 
-/* Double from 40px -> 80px, invert black lines to white */
+/* 80px wide, invert black lines to white (if the SVG is black) */
 .brand-logo {
   width: 80px;
   height: auto;
@@ -52,14 +52,14 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* White brand text, not clickable */
+/* White text, not clickable */
 .brand-text {
   font-weight: 700;
   font-size: 1.5em;
   color: #FFFFFF;
 }
 
-/* Mobile nav toggle (hamburger) */
+/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
@@ -69,7 +69,7 @@ body {
   cursor: pointer;
 }
 
-/* Nav menu & links */
+/* Nav Menu */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -87,7 +87,7 @@ body {
 }
 
 /* -------------------------
-   Hero (Ken Burns Slideshow)
+   HERO (Ken Burns)
 -------------------------- */
 .hero {
   position: relative;
@@ -95,12 +95,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* hide overflow while zooming */
+  overflow: hidden;
 }
 
 .slideshow {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -108,13 +109,13 @@ body {
 
 .slide {
   position: absolute;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   background-position: center;
   background-size: cover;
 }
 
-/* Slide 1 (hero-bg.jpg) */
+/* Slide 1: hero-bg.jpg */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
@@ -126,7 +127,7 @@ body {
   100% { opacity: 0; transform: scale(1); }
 }
 
-/* Slide 2 (second-slide.png) */
+/* Slide 2: second-slide.png */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
@@ -181,7 +182,7 @@ body {
 }
 
 /* -------------------------
-   Sections & Footer
+   About, Visit, Contact, Footer
 -------------------------- */
 #about {
   background-color: #FFFFFF;
@@ -246,7 +247,7 @@ footer {
 }
 
 /* -------------------------
-   Fade-In on Scroll
+   Fade-in on Scroll
 -------------------------- */
 .fade-in-element {
   opacity: 0;
