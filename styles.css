@@ -63,7 +63,8 @@ body {
 }
 
 /* -------------------------
-   Hero Section + Crossfade
+   Hero Section
+   Ken Burns Crossfade
 -------------------------- */
 .hero {
   position: relative;
@@ -71,10 +72,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
-/* Slideshow container (2 slides) */
+/* Slideshow container: 2 slides overlayed */
 .slideshow {
   position: absolute;
   top: 0;
@@ -90,40 +91,71 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
-/* Slide 1 and 2 each have their own keyframes 
-   so we can ensure NO white gap during crossfade */
-
-/* Slide 1: visible first half of the cycle */
+/* Slide 1: hero-bg.jpg
+   Visible first half of 16s, with slight zoom */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
 }
 
+/* 
+  fade1: 
+  - 0% to 45%: fully visible, scale from 1 to ~1.08
+  - 45% to 55%: crossfade out (opacity 1 to 0)
+  - 55% to 100%: invisible (scale can reset)
+*/
 @keyframes fade1 {
-  /* Show from 0% to 45% */
-  0%, 45% { opacity: 1; }
-  /* Crossfade out from 45% to 55% */
-  55%, 100% { opacity: 0; }
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  55% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 
-/* Slide 2: visible second half of the cycle */
+/* Slide 2: second-slide.png
+   Visible second half of 16s, also zooming */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
 }
 
+/*
+  fade2:
+  - 0% to 45%: invisible
+  - 45% to 55%: crossfade in (opacity 0 to 1)
+  - 55% to 100%: fully visible, scale from 1 to ~1.08
+*/
 @keyframes fade2 {
-  /* Hide from 0% to 45% */
-  0%, 45% { opacity: 0; }
-  /* Crossfade in from 45% to 55% */
-  55%, 100% { opacity: 1; }
+  0%, 45% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
-/* Hero content on top of slides */
+/* Content Over the Slides */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -231,7 +263,7 @@ body {
    Contact (Black)
 -------------------------- */
 #contact {
-  background-color: #000000; /* black */
+  background-color: #000000; 
   padding: 60px 20px;
   text-align: center;
 }
@@ -255,7 +287,7 @@ body {
 }
 
 #contact a {
-  color: #00BFFF; /* sky-blue links on black */
+  color: #00BFFF; 
   text-decoration: none;
 }
 
