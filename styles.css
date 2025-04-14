@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* Overall background (hero overrides its own background). */
+  background: #FFFFFF; /* Overall page background; hero has its own override. */
 }
 
 /* -------------------------
@@ -25,7 +25,7 @@ body {
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 999; /* Stays on top during scroll */
+  z-index: 999; /* Stay on top during scroll */
 }
 
 .brand {
@@ -120,10 +120,10 @@ body {
 }
 
 /* -------------------------
-   About (white background)
+   About (White Background)
 -------------------------- */
 #about {
-  background-color: #FFFFFF; /* plain white */
+  background-color: #FFFFFF;
   padding: 60px 20px;
   text-align: center;
 }
@@ -143,7 +143,7 @@ body {
 }
 
 /* -------------------------
-   Plan a Visit (ivory background)
+   Plan a Visit (Ivory)
 -------------------------- */
 #visit {
   background-color: #FFFFF0; /* Ivory */
@@ -179,7 +179,7 @@ body {
 }
 
 /* -------------------------
-   Contact (black background)
+   Contact (Black)
 -------------------------- */
 #contact {
   background-color: #000000; /* black */
@@ -187,7 +187,6 @@ body {
   text-align: center;
 }
 
-/* Make text visible on black */
 #contact h2 {
   font-weight: 700;
   font-size: 2em;
@@ -207,7 +206,7 @@ body {
 }
 
 #contact a {
-  color: #00BFFF; /* Light link color on black (adjust if you prefer) */
+  color: #00BFFF; /* Make links visible on black (sky-blue) */
   text-decoration: none;
 }
 
@@ -226,7 +225,7 @@ footer {
   color: #333;
 }
 
-/* If you want the footer also black: 
+/* If you'd prefer the footer also black, you can do:
    footer {
      background-color: #000000;
      color: #FFFFFF;
@@ -283,7 +282,6 @@ footer {
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
 .fade-in-element.show {
   opacity: 1;
   transform: translateY(0);
