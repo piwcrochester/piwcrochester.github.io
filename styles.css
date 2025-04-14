@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* Overall page background; hero overrides with its own BG. */
+  background: #FFFFFF; /* Overall background; hero has its own. */
 }
 
 /* -------------------------
@@ -25,7 +25,7 @@ body {
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 999; /* Stays on top during scroll */
+  z-index: 999;
 }
 
 .brand {
@@ -79,7 +79,7 @@ body {
 
 .hero-content {
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Subtle white overlay */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 8px;
   max-width: 600px;
@@ -147,7 +147,7 @@ body {
    (Silver Ivory Background)
 -------------------------- */
 #visit {
-  background-color: #F2F2EC; /* <--- Silver ivory color */
+  background-color: #F2F2EC; /* Silver ivory */
   padding: 60px 20px;
   text-align: center;
 }
@@ -180,7 +180,7 @@ body {
 }
 
 /* -------------------------
-   Contact (Black Background)
+   Contact (Black)
 -------------------------- */
 #contact {
   background-color: #000000; /* black */
@@ -207,7 +207,7 @@ body {
 }
 
 #contact a {
-  color: #00BFFF; /* Make links visible on black (sky-blue) */
+  color: #00BFFF; /* sky-blue on black */
   text-decoration: none;
 }
 
@@ -254,7 +254,6 @@ footer {
     display: block;
   }
 
-  /* Let sections stack nicely on mobile */
   #about, #visit, #contact {
     text-align: left;
   }
