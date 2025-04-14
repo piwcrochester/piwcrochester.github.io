@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* Overall background; hero has its own. */
+  background: #FFFFFF; /* Overall background for non-hero areas. */
 }
 
 /* -------------------------
@@ -63,21 +63,69 @@ body {
 }
 
 /* -------------------------
-   Hero Section (Parallax)
+   Hero Section
+   with Slideshow
 -------------------------- */
 .hero {
-  min-height: 100vh;
   position: relative;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Parallax background image */
-  background: url('assets/hero-bg.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
+  /* no single background here, slideshow handles images */
+  overflow: hidden; /* so no scrollbars appear if images overflow */
 }
 
+/* Slideshow container */
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* slides are behind .hero-content (which has z-index 2) */
+}
+
+/* Each slide (absolute) covers the full hero area */
+.slide {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 8s infinite;
+}
+
+/* First image (immediate start) */
+.slide1 {
+  background-image: url('assets/hero-bg.jpg');
+}
+
+/* Second image (starts halfway through the cycle) */
+.slide2 {
+  background-image: url('assets/second-slide.png');
+  animation-delay: 4s;
+}
+
+/* Keyframes for crossfade: 
+   - 8-second total cycle
+   - each image fades in (5%) and stays, then fades out (50%)
+*/
+@keyframes fade {
+  0%   { opacity: 0; }
+  5%   { opacity: 1; }
+  45%  { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Hero content on top of slideshow */
 .hero-content {
+  position: relative; /* ensures above z-index 1 */
+  z-index: 2;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
@@ -143,11 +191,10 @@ body {
 }
 
 /* -------------------------
-   Plan a Visit 
-   (Silver Ivory Background)
+   Plan a Visit (Silver Ivory)
 -------------------------- */
 #visit {
-  background-color: #F2F2EC; /* Silver ivory */
+  background-color: #F2F2EC; /* silver ivory */
   padding: 60px 20px;
   text-align: center;
 }
@@ -207,7 +254,7 @@ body {
 }
 
 #contact a {
-  color: #00BFFF; /* sky-blue on black */
+  color: #00BFFF; /* sky-blue links on black */
   text-decoration: none;
 }
 
@@ -219,11 +266,11 @@ body {
    Footer (Black)
 -------------------------- */
 footer {
-  background-color: #000000; /* black footer */
+  background-color: #000000;
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
-  color: #FFFFFF; /* white text */
+  color: #FFFFFF;
 }
 
 /* -------------------------
@@ -268,7 +315,7 @@ footer {
 }
 
 /* -------------------------
-   Fade-in Effect
+   Fade-in on Scroll
 -------------------------- */
 .fade-in-element {
   opacity: 0;
