@@ -14,27 +14,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // === Fade-in on Scroll ===
-  // 1. Find all elements that should fade in
+  // Fade-in on Scroll with Intersection Observer
   const fadeElements = document.querySelectorAll('.fade-in-element');
-
-  // 2. Use Intersection Observer to watch these elements
-  const observerOptions = {
-    threshold: 0.1  // Trigger when 10% of the element is visible
-  };
+  const observerOptions = { threshold: 0.1 };
 
   const fadeInOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Add the 'show' class to start the CSS transition
         entry.target.classList.add('show');
-        observer.unobserve(entry.target); // Stop observing once it's shown
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
 
-  // 3. Attach the observer to each fade-in element
-  fadeElements.forEach(el => {
-    fadeInOnScroll.observe(el);
-  });
+  fadeElements.forEach(el => fadeInOnScroll.observe(el));
 });
