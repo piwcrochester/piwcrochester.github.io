@@ -1,17 +1,15 @@
-/* RESET / BASE */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Keep body wide enough, ensure no hidden overflow */
 body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
   background: #FFFFFF;
-  min-height: 100vh; /* ensures a full page length */
 }
 
 /* NAVBAR */
@@ -35,10 +33,10 @@ body {
   text-decoration: none;
 }
 .brand-logo {
-  width: 80px;  /* double size */
+  width: 80px;
   height: auto;
   margin-right: 10px;
-  filter: brightness(0) invert(1); /* if your SVG is black, inverts to white */
+  filter: brightness(0) invert(1);
 }
 .brand-text {
   font-weight: 700;
@@ -69,7 +67,7 @@ body {
   text-decoration: underline;
 }
 
-/* HERO (Ken Burns) */
+/* HERO */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -80,8 +78,10 @@ body {
 }
 .slideshow {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 .slide {
@@ -91,21 +91,19 @@ body {
   background-position: center;
   background-size: cover;
 }
-/* Slide 1 (hero-bg.jpg) */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
+}
+.slide2 {
+  background-image: url('assets/second-slide.png');
+  animation: fade2 16s infinite;
 }
 @keyframes fade1 {
   0%   { opacity: 1; transform: scale(1); }
   45%  { opacity: 1; transform: scale(1.08); }
   55%  { opacity: 0; transform: scale(1.08); }
   100% { opacity: 0; transform: scale(1); }
-}
-/* Slide 2 (second-slide.png) */
-.slide2 {
-  background-image: url('assets/second-slide.png');
-  animation: fade2 16s infinite;
 }
 @keyframes fade2 {
   0%, 45% { opacity: 0; transform: scale(1); }
@@ -124,11 +122,9 @@ body {
 .hero-logo {
   max-width: 150px;
   width: 100%;
-  height: auto;
   margin-bottom: 20px;
 }
 .hero h1 {
-  font-weight: 700;
   font-size: 2.5em;
   color: #0F40A1;
   margin-bottom: 0.5em;
@@ -142,7 +138,7 @@ body {
   display: inline-block;
   padding: 0.75em 1.5em;
   background-color: #0F40A1;
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
   border-radius: 4px;
@@ -151,58 +147,66 @@ body {
   background-color: #0c3580;
 }
 
-/* SECTIONS & FOOTER */
+/* SECTIONS */
 section {
   width: 100%;
-  padding: 80px 20px; 
-  max-width: 1200px;   /* keeps text from stretching too wide */
-  margin: 0 auto;      /* center the sections horizontally */
-  text-align: center; 
+  padding: 80px 0;
 }
-section h2 {
-  font-weight: 700;
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.section-inner h2 {
   font-size: 2em;
-  color: #0F40A1;
   margin-bottom: 20px;
+  color: #0F40A1;
 }
-section p {
+.section-inner p {
   max-width: 700px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   font-size: 1.1em;
-  line-height: 1.6;
-  color: #333;
 }
+
+/* BACKGROUNDS */
 #about {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 #visit {
   background-color: #F2F2EC;
 }
 #contact {
   background-color: #000000;
-  color: #FFFFFF;
+  color: #ffffff;
 }
+#contact a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* BULLETS */
+#visit ul {
+  list-style-position: inside;
+  text-align: left;
+  max-width: 700px;
+  margin: 20px auto;
+}
+#visit li {
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+/* FOOTER */
 footer {
-  background-color: #000000;
+  background-color: #000;
+  color: #fff;
   text-align: center;
   padding: 20px;
   font-size: 0.9em;
-  color: #FFFFFF;
-}
-
-/* Plan a Visit bullet points inside */
-#visit ul {
-  list-style-position: inside; /* bullets appear inside the container */
-  list-style-type: disc;
-  text-align: left; /* left-align them for readability */
-  max-width: 700px;
-  margin: 20px auto;
-  color: #333;
-}
-#visit li {
-  margin: 8px 0;
-  line-height: 1.6;
-  font-size: 1.1em;
 }
 
 /* RESPONSIVE */
@@ -212,34 +216,29 @@ footer {
   }
   .nav-menu {
     display: none;
+    flex-direction: column;
+    background-color: #0F40A1;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #0F40A1;
     width: 100%;
-    flex-direction: column;
-    padding: 10px 0;
+  }
+  .nav-menu.open {
+    display: flex;
   }
   .nav-menu li {
     margin: 10px 0;
     text-align: center;
   }
-  .nav-menu.open {
-    display: flex;
+  .section-inner {
+    text-align: left;
   }
-  section {
-    text-align: left; /* On mobile, left-align is more readable */
-    padding: 60px 20px;
-  }
-  section h2 {
-    text-align: center; /* but keep headings centered */
-  }
-  .hero-content {
-    margin: 0 20px;
+  .section-inner h2 {
+    text-align: center;
   }
 }
 
-/* FADE-IN ON SCROLL */
+/* FADE-IN */
 .fade-in-element {
   opacity: 0;
   transform: translateY(40px);
