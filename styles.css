@@ -1,16 +1,14 @@
 /*
-   - White nav text, 80px logo
-   - Ken Burns hero
-   - fade-in-element hidden by default, become visible with .show
-   - About = white, Visit = ivory, Contact = black, black footer
+  - Adds more padding/margin around sections
+  - Keeps the Ken Burns hero, fade-in, etc.
 */
 
+/* RESET / BASE */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
@@ -24,7 +22,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background-color: #0F40A1;
-  padding: 10px 20px;
+  padding: 15px 25px; /* Increased padding for a bit more space */
   position: sticky;
   top: 0;
   z-index: 999;
@@ -42,15 +40,13 @@ body {
   width: 80px;
   height: auto;
   margin-right: 10px;
-  filter: brightness(0) invert(1); /* If your SVG lines are black, turns them white */
+  filter: brightness(0) invert(1); /* Convert black lines to white if needed */
 }
 .brand-text {
   font-weight: 700;
   font-size: 1.5em;
   color: #FFFFFF;
 }
-
-/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
@@ -59,7 +55,6 @@ body {
   color: #FFFFFF;
   cursor: pointer;
 }
-
 .nav-menu {
   list-style: none;
   display: flex;
@@ -97,7 +92,6 @@ body {
   background-position: center;
   background-size: cover;
 }
-/* Slide 1 (hero-bg.jpg) */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
@@ -108,7 +102,6 @@ body {
   55%  { opacity: 0; transform: scale(1.08); }
   100% { opacity: 0; transform: scale(1); }
 }
-/* Slide 2 (second-slide.png) */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
@@ -118,13 +111,12 @@ body {
   55%     { opacity: 1; transform: scale(1); }
   100%    { opacity: 1; transform: scale(1.08); }
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
+  padding: 25px; /* Slightly bigger than before */
   border-radius: 8px;
   max-width: 600px;
 }
@@ -158,27 +150,54 @@ body {
   background-color: #0c3580;
 }
 
-/* SECTIONS */
+/* SECTIONS & FOOTER */
+section {
+  width: 100%;
+  padding: 80px 20px; /* More vertical padding for breathing room */
+  text-align: center;
+}
 #about {
   background-color: #FFFFFF;
-  padding: 60px 20px;
-  text-align: center;
 }
 #visit {
   background-color: #F2F2EC;
-  padding: 60px 20px;
-  text-align: center;
 }
 #contact {
   background-color: #000000;
-  padding: 60px 20px;
-  text-align: center;
   color: #FFFFFF;
+}
+section h2 {
+  font-weight: 700;
+  font-size: 2em;
+  color: #0F40A1;
+  margin-bottom: 20px;
+}
+section p {
+  max-width: 700px; /* more comfortable line width */
+  margin: 0 auto 20px auto;
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #333;
+}
+#contact p {
+  color: #FFFFFF; /* Keep text white on black background */
+}
+#visit ul {
+  text-align: left;
+  list-style: disc;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #333;
+}
+#visit li {
+  margin: 5px 0;
+  line-height: 1.5;
+  font-size: 1.1em;
 }
 footer {
   background-color: #000000;
   text-align: center;
-  padding: 10px;
+  padding: 15px; /* slightly bigger than before */
   font-size: 0.9em;
   color: #FFFFFF;
 }
@@ -205,11 +224,12 @@ footer {
   .nav-menu.open {
     display: flex;
   }
-  #about, #visit, #contact {
-    text-align: left;
+  section {
+    text-align: left; /* On mobile, left-align for better reading */
+    padding: 60px 20px;
   }
-  #about h2, #visit h2, #contact h2 {
-    text-align: center;
+  section h2 {
+    text-align: center; /* But keep the headings centered */
   }
   .hero-content {
     margin: 0 20px;
