@@ -1,11 +1,10 @@
-/* 
-   Key points:
-   - brand-text is white (#FFFFFF)
-   - brand-logo is 80px wide (double the old 40px)
-   - Page icon is set in index.html via <link rel="icon" ...>
+/*
+  - "Rochester City Church" text is white
+  - Brand logo is 80px wide
+  - Ken Burns hero with fade
+  - #about (white), #visit (ivory), #contact (black), black footer
 */
 
-/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -15,12 +14,10 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* non-hero areas */
+  background: #FFFFFF;
 }
 
-/* -------------------------
-   Navigation Bar
--------------------------- */
+/* Navbar */
 .navbar {
   display: flex;
   align-items: center;
@@ -31,38 +28,30 @@ body {
   top: 0;
   z-index: 999;
 }
-
 .brand {
   display: flex;
   align-items: center;
 }
-
-/* LOGO (clickable) */
+/* Only the logo is clickable */
 .brand a {
   display: inline-flex;
   align-items: center;
-  text-decoration: none; /* no underline */
+  text-decoration: none;
 }
-
-/* 
-   Double from 40px -> 80px 
-   Turn black lines white if needed
-*/
+/* 80px wide, invert black to white if your SVG lines are black */
 .brand-logo {
   width: 80px;
   height: auto;
   margin-right: 10px;
   filter: brightness(0) invert(1);
 }
-
-/* White text, not clickable */
 .brand-text {
   font-weight: 700;
   font-size: 1.5em;
-  color: #FFFFFF;
+  color: #FFFFFF; /* White text */
 }
 
-/* Nav toggle (hidden on desktop) */
+/* Mobile nav toggle */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
@@ -71,31 +60,24 @@ body {
   color: #FFFFFF;
   cursor: pointer;
 }
-
-/* Nav menu (links) */
+/* Nav menu */
 .nav-menu {
   list-style: none;
   display: flex;
 }
-
 .nav-menu li {
   margin-left: 2em;
 }
-
 .nav-menu a {
   text-decoration: none;
   font-weight: 600;
   color: #FFFFFF;
 }
-
 .nav-menu a:hover {
   text-decoration: underline;
 }
 
-/* -------------------------
-   Hero Section
-   Ken Burns Crossfade
--------------------------- */
+/* Hero */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -104,49 +86,39 @@ body {
   justify-content: center;
   overflow: hidden;
 }
-
 .slideshow {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   z-index: 1;
 }
-
 .slide {
   position: absolute;
   width: 100%; height: 100%;
   background-position: center;
   background-size: cover;
 }
-
 /* Slide 1: hero-bg.jpg */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
 }
-
-/* Keyframes for slide1 crossfade */
 @keyframes fade1 {
   0%   { opacity: 1; transform: scale(1); }
   45%  { opacity: 1; transform: scale(1.08); }
   55%  { opacity: 0; transform: scale(1.08); }
   100% { opacity: 0; transform: scale(1); }
 }
-
 /* Slide 2: second-slide.png */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
 }
-
-/* Keyframes for slide2 crossfade */
 @keyframes fade2 {
   0%, 45% { opacity: 0; transform: scale(1); }
   55%     { opacity: 1; transform: scale(1); }
   100%    { opacity: 1; transform: scale(1.08); }
 }
-
-/* Content overlay in hero */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -156,27 +128,23 @@ body {
   border-radius: 8px;
   max-width: 600px;
 }
-
 .hero-logo {
   max-width: 150px;
   width: 100%;
   height: auto;
   margin-bottom: 20px;
 }
-
 .hero h1 {
   font-weight: 700;
   font-size: 2.5em;
   color: #0F40A1;
   margin-bottom: 0.5em;
 }
-
 .hero p {
   font-size: 1.1em;
   margin-bottom: 1em;
   color: #333;
 }
-
 .btn-primary {
   display: inline-block;
   padding: 0.75em 1.5em;
@@ -190,9 +158,7 @@ body {
   background-color: #0c3580;
 }
 
-/* -------------------------
-   About, Visit, Contact, Footer
--------------------------- */
+/* About, Visit, Contact, Footer */
 #about {
   background-color: #FFFFFF;
   padding: 60px 20px;
@@ -217,9 +183,7 @@ footer {
   color: #FFFFFF;
 }
 
-/* -------------------------
-   Mobile Responsive
--------------------------- */
+/* Mobile / Responsive */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -252,9 +216,7 @@ footer {
   }
 }
 
-/* -------------------------
-   Fade-in on Scroll
--------------------------- */
+/* Fade-in on Scroll */
 .fade-in-element {
   opacity: 0;
   transform: translateY(40px);
