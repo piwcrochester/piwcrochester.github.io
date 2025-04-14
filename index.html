@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rochester City Church</title>
 
   <!-- Favicon (Page Logo) -->
-  <!-- Make sure file name & path are correct (assets/blue-background.PNG) -->
-  <link 
-    rel="icon" 
-    type="image/png" 
+  <!-- Make sure the file and path match exactly: assets/blue-background.PNG -->
+  <link
+    rel="icon"
+    type="image/png"
     href="assets/blue-background.PNG"
   />
 
-  <!-- Google Font: Montserrat -->
+  <!-- Google Font -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Site CSS -->
+  <!-- Site CSS (Ensure styles.css is in the same folder) -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Smooth scrolling for anchor links -->
+  <!-- Smooth Scrolling for anchor links (optional) -->
   <style>
     html {
       scroll-behavior: smooth;
@@ -31,19 +31,19 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVIGATION BAR -->
   <nav class="navbar">
-    <!-- BRAND container -->
+    <!-- Brand container -->
     <div class="brand">
-      <!-- Only the LOGO is clickable -->
+      <!-- Only the logo is clickable -->
       <a href="#home">
         <img src="assets/white-svg.svg" alt="Church logo" class="brand-logo" />
       </a>
-      <!-- The text is separate (NOT clickable) -->
+      <!-- White text (not clickable) -->
       <span class="brand-text">Rochester City Church</span>
     </div>
 
-    <!-- Mobile nav toggle -->
+    <!-- Mobile nav toggle (hamburger) -->
     <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
 
     <!-- Navigation Menu -->
@@ -55,51 +55,58 @@
     </ul>
   </nav>
 
-  <!-- Hero Section (Ken Burns crossfade) -->
+  <!-- HERO SECTION (Ken Burns Crossfade) -->
   <section id="home" class="hero fade-in-element">
     <div class="slideshow">
+      <!-- Slide 1 -->
       <div class="slide slide1"></div>
+      <!-- Slide 2 -->
       <div class="slide slide2"></div>
     </div>
 
-    <!-- Hero Content over slides -->
+    <!-- Hero Content Over the Slides -->
     <div class="hero-content">
+      <!-- Replace roccity-logo.png if your hero image is named differently -->
       <img src="assets/roccity-logo.png" alt="Rochester City Church logo" class="hero-logo" />
+
       <h1>Welcome to Rochester City Church</h1>
       <p>Join us this Sunday at 10 AM for worship and fellowship.</p>
-      <!-- Watch Live button (replace # with actual YouTube link) -->
-      <a href="#" class="btn-primary" target="_blank" rel="noopener">Watch Live on YouTube</a>
+      <!-- YouTube link button (replace # with actual link) -->
+      <a href="#" class="btn-primary" target="_blank" rel="noopener">
+        Watch Live on YouTube
+      </a>
     </div>
   </section>
 
-  <!-- About Section (White) -->
+  <!-- ABOUT SECTION (White) -->
   <section id="about" class="fade-in-element">
     <h2>About Us</h2>
     <p>
-      Rochester City Church is a community of believers serving the Rochester area...
-      <!-- More text here as needed -->
+      Rochester City Church is a community of believers serving the Rochester area.
+      We are committed to helping people grow in faith...
+      <!-- etc. -->
     </p>
   </section>
 
-  <!-- Plan a Visit Section (Silver Ivory) -->
+  <!-- PLAN A VISIT SECTION (Silver Ivory) -->
   <section id="visit" class="fade-in-element">
     <h2>Plan a Visit</h2>
-    <p>We’d love to have you join us! Here’s what you can expect...</p>
+    <p>We’d love to have you join us! Here’s what you can expect when you visit:</p>
     <ul>
       <li><strong>Sunday Service:</strong> 10:00 AM – 12:00 PM</li>
       <li><strong>Wednesday (Search the Scriptures):</strong> 8:00 PM – 9:30 PM</li>
       <li><strong>Friday (Prayer Meeting):</strong> 7:00 PM – 8:30 PM</li>
       <li><strong>Location:</strong> 159 Alexander St, Rochester, NY 14607</li>
-      <li><strong>Atmosphere:</strong> Casual and welcoming – come as you are</li>
-      <li><strong>Kids:</strong> Fun, safe kids program</li>
+      <li><strong>Atmosphere:</strong> Casual and welcoming – come as you are.</li>
+      <li><strong>Kids:</strong> Children are welcome; we offer a fun, safe kids program.</li>
     </ul>
   </section>
 
-  <!-- Contact Section (Black) -->
+  <!-- CONTACT SECTION (Black) -->
   <section id="contact" class="fade-in-element">
     <h2>Contact Us</h2>
     <p>
-      <strong>Email:</strong> 
+      <strong>Email:</strong>
       <a href="mailto:piwcrochester1@gmail.com">piwcrochester1@gmail.com</a>
     </p>
     <p>
@@ -108,12 +115,12 @@
     </p>
   </section>
 
-  <!-- Footer (Black) -->
+  <!-- FOOTER (Black) -->
   <footer>
     <p>&copy; 2025 Rochester City Church. All rights reserved.</p>
   </footer>
 
-  <!-- JS (optional) -->
+  <!-- JavaScript (Optional) -->
   <!-- <script src="script.js"></script> -->
 </body>
 </html>
