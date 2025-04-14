@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* Overall page background; hero has its own override. */
+  background: #FFFFFF; /* Overall page background; hero overrides with its own BG. */
 }
 
 /* -------------------------
@@ -25,7 +25,7 @@ body {
   padding: 10px 20px;
   position: sticky;
   top: 0;
-  z-index: 999; /* Stay on top during scroll */
+  z-index: 999; /* Stays on top during scroll */
 }
 
 .brand {
@@ -143,10 +143,11 @@ body {
 }
 
 /* -------------------------
-   Plan a Visit (Ivory)
+   Plan a Visit 
+   (Silver Ivory Background)
 -------------------------- */
 #visit {
-  background-color: #FFFFF0; /* Ivory */
+  background-color: #F2F2EC; /* <--- Silver ivory color */
   padding: 60px 20px;
   text-align: center;
 }
@@ -179,7 +180,7 @@ body {
 }
 
 /* -------------------------
-   Contact (Black)
+   Contact (Black Background)
 -------------------------- */
 #contact {
   background-color: #000000; /* black */
@@ -215,22 +216,15 @@ body {
 }
 
 /* -------------------------
-   Footer
+   Footer (Black)
 -------------------------- */
 footer {
-  background-color: #f4f4f4; 
+  background-color: #000000; /* black footer */
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
-  color: #333;
+  color: #FFFFFF; /* white text */
 }
-
-/* If you'd prefer the footer also black, you can do:
-   footer {
-     background-color: #000000;
-     color: #FFFFFF;
-   }
-*/
 
 /* -------------------------
    Mobile / Responsive
