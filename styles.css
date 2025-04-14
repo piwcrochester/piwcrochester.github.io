@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* The hero section overrides this with a parallax image. */
+  background: #FFFFFF; /* Overall background (hero overrides its own background). */
 }
 
 /* -------------------------
@@ -120,44 +120,94 @@ body {
 }
 
 /* -------------------------
-   Sections (Now with
-   polished "silver ivory"
-   background)
+   About (white background)
 -------------------------- */
-.section {
-  background-color: #F5F5F5; /* <--- The new background color */
+#about {
+  background-color: #FFFFFF; /* plain white */
   padding: 60px 20px;
   text-align: center;
 }
 
-.section h2 {
+#about h2 {
   font-weight: 700;
   font-size: 2em;
   color: #0F40A1;
   margin-bottom: 20px;
 }
 
-.section p {
+#about p {
   max-width: 600px;
   margin: 0 auto 20px auto;
   font-size: 1.1em;
+  color: #333;
 }
 
-.section ul {
+/* -------------------------
+   Plan a Visit (ivory background)
+-------------------------- */
+#visit {
+  background-color: #FFFFF0; /* Ivory */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#visit h2 {
+  font-weight: 700;
+  font-size: 2em;
+  color: #0F40A1;
+  margin-bottom: 20px;
+}
+
+#visit p {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1em;
+  color: #333;
+}
+
+#visit ul {
   text-align: left;
   list-style: disc;
   max-width: 600px;
   margin: 0 auto;
+  color: #333;
 }
 
-.section li {
+#visit li {
   margin: 5px 0;
   line-height: 1.5;
 }
 
-/* Contact Links */
+/* -------------------------
+   Contact (black background)
+-------------------------- */
+#contact {
+  background-color: #000000; /* black */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Make text visible on black */
+#contact h2 {
+  font-weight: 700;
+  font-size: 2em;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  font-size: 1.1em;
+  color: #FFFFFF;
+}
+
+#contact strong {
+  color: #FFFFFF;
+}
+
 #contact a {
-  color: #0F40A1;
+  color: #00BFFF; /* Light link color on black (adjust if you prefer) */
   text-decoration: none;
 }
 
@@ -166,16 +216,22 @@ body {
 }
 
 /* -------------------------
-   Footer (Optionally match
-   the same background)
+   Footer
 -------------------------- */
 footer {
-  background-color: #F5F5F5; /* <--- Matches the sections */
+  background-color: #f4f4f4; 
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
   color: #333;
 }
+
+/* If you want the footer also black: 
+   footer {
+     background-color: #000000;
+     color: #FFFFFF;
+   }
+*/
 
 /* -------------------------
    Mobile / Responsive
@@ -205,11 +261,12 @@ footer {
     display: block;
   }
 
-  .section {
+  /* Let sections stack nicely on mobile */
+  #about, #visit, #contact {
     text-align: left;
   }
 
-  .section h2 {
+  #about h2, #visit h2, #contact h2 {
     text-align: center;
   }
 
