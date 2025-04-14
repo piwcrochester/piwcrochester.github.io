@@ -1,5 +1,5 @@
 /* -------------------------
-   Base & Global Styles
+   Base & Global
 -------------------------- */
 * {
   margin: 0;
@@ -11,7 +11,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   color: #333;
   line-height: 1.6;
-  background: #FFFFFF; /* Overall background for non-hero areas. */
+  background: #FFFFFF; /* For non-hero sections */
 }
 
 /* -------------------------
@@ -21,47 +21,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #0F40A1; /* Deep blue background */
-  padding: 10px 20px;
+  background-color: #0F40A1; /* Deep blue */
+  /* Smaller padding for a reduced nav height */
+  padding: 5px 15px;
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
-/* Brand Container */
+/* Brand container with clickable logo + separate text */
 .brand {
-  /* No special styles needed unless you want extra spacing */
+  display: flex;
+  align-items: center;
 }
 
-/* Brand link (logo + text side-by-side, clickable to #home) */
-.brand-link {
+/* Clickable logo only */
+.brand a {
   display: inline-flex;
   align-items: center;
-  text-decoration: none; /* no underline */
 }
 
-/* The SVG logo (white-svg.svg) next to the brand text */
+/* Filter to invert black lines to white on the logo, if needed */
 .brand-logo {
-  width: 30px;  /* adjust if you want bigger/smaller */
+  width: 40px;  /* Adjust as desired */
   height: auto;
-  margin-right: 8px;
-  /* Convert black SVG to white (on the deep blue background) */
+  margin-right: 10px;
   filter: brightness(0) invert(1);
 }
 
-/* Brand text remains white to match nav background */
-.brand-link span {
+.brand-text {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: #FFFFFF;
 }
 
-/* Remove underline on hover */
-.brand-link:hover,
-.brand-link:focus {
-  text-decoration: none;
-}
-
+/* Mobile nav toggle (hamburger) */
 .nav-toggle {
   display: none;
   font-size: 1.5em;
@@ -71,6 +65,7 @@ body {
   cursor: pointer;
 }
 
+/* Nav menu (links) */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -91,8 +86,8 @@ body {
 }
 
 /* -------------------------
-   Hero Section
-   Ken Burns Crossfade
+   Hero Section 
+   Ken Burns crossfade
 -------------------------- */
 .hero {
   position: relative;
@@ -100,22 +95,25 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: hidden; /* hide any overflow during zoom */
 }
 
-/* Slideshow container: 2 slides overlaid */
 .slideshow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* behind .hero-content */
+  z-index: 1; /* behind hero-content */
 }
 
+/* 
+   Two slides: fade in/out 
+   each lasting 16s total 
+*/
 .slide {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -123,15 +121,13 @@ body {
   background-size: cover;
 }
 
-/* Slide 1: hero-bg.jpg
-   Visible first half of 16s, zooming in slightly */
+/* Slide 1: hero-bg.jpg, visible first half */
 .slide1 {
   background-image: url('assets/hero-bg.jpg');
   animation: fade1 16s infinite;
 }
 
 @keyframes fade1 {
-  /* 0%->45%: visible, scale up a bit */
   0% {
     opacity: 1;
     transform: scale(1);
@@ -140,44 +136,38 @@ body {
     opacity: 1;
     transform: scale(1.08);
   }
-  /* 45%->55%: fade out */
   55% {
     opacity: 0;
     transform: scale(1.08);
   }
-  /* 55%->100%: invisible */
   100% {
     opacity: 0;
     transform: scale(1);
   }
 }
 
-/* Slide 2: second-slide.png
-   Visible second half of 16s, also zooming */
+/* Slide 2: second-slide.png, visible second half */
 .slide2 {
   background-image: url('assets/second-slide.png');
   animation: fade2 16s infinite;
 }
 
 @keyframes fade2 {
-  /* 0%->45%: invisible */
   0%, 45% {
     opacity: 0;
     transform: scale(1);
   }
-  /* 45%->55%: crossfade in */
   55% {
     opacity: 1;
     transform: scale(1);
   }
-  /* 55%->100%: visible, scale up */
   100% {
     opacity: 1;
     transform: scale(1.08);
   }
 }
 
-/* Content Over the Slides */
+/* Hero content overlay */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -223,7 +213,7 @@ body {
 }
 
 /* -------------------------
-   About (White Background)
+   About (White)
 -------------------------- */
 #about {
   background-color: #FFFFFF;
@@ -249,7 +239,7 @@ body {
    Plan a Visit (Silver Ivory)
 -------------------------- */
 #visit {
-  background-color: #F2F2EC; /* silver ivory */
+  background-color: #F2F2EC;
   padding: 60px 20px;
   text-align: center;
 }
@@ -285,7 +275,7 @@ body {
    Contact (Black)
 -------------------------- */
 #contact {
-  background-color: #000000; 
+  background-color: #000000;
   padding: 60px 20px;
   text-align: center;
 }
@@ -309,7 +299,7 @@ body {
 }
 
 #contact a {
-  color: #00BFFF; 
+  color: #00BFFF;
   text-decoration: none;
 }
 
@@ -329,9 +319,13 @@ footer {
 }
 
 /* -------------------------
-   Mobile / Responsive
+   Responsive / Mobile
 -------------------------- */
 @media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
   .nav-menu {
     display: none;
     position: absolute;
@@ -342,18 +336,12 @@ footer {
     background-color: #0F40A1;
     padding: 10px 0;
   }
-
   .nav-menu li {
     margin: 10px 0;
     text-align: center;
   }
-
   .nav-menu.open {
     display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
   }
 
   #about, #visit, #contact {
@@ -377,6 +365,7 @@ footer {
   transform: translateY(40px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 .fade-in-element.show {
   opacity: 1;
   transform: translateY(0);
