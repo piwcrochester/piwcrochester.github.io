@@ -1,0 +1,98 @@
+<!-- give.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Give | Rochester City Church</title>
+
+  <link rel="icon" type="image/png" href="assets/blue-background.PNG" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .give-hero {
+      background-image: url('assets/give.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 40px;
+    }
+    .give-hero-overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 800px;
+    }
+    .give-hero h1 {
+      font-size: 3em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .give-hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .give-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .give-buttons a {
+      display: inline-block;
+      background-color: #0F40A1;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .give-buttons a:hover {
+      background-color: #0c3580;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">
+      <a href="index.html#home">
+        <img src="assets/white-svg.svg" alt="Church logo" class="brand-logo" />
+      </a>
+      <span class="brand-text">Rochester City Church</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#visit">Plan a Visit</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="give.html">Give</a></li>
+    </ul>
+  </nav>
+
+  <section class="give-hero">
+    <div class="give-hero-overlay">
+      <h1>Giving</h1>
+      <p>
+        "You must each decide in your heart how much to give. And don’t give reluctantly or in response to pressure. “For God loves a person who gives cheerfully.”"<br />
+        <em>2 Corinthians 9:7</em>
+      </p>
+      <div class="give-buttons">
+        <a href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1609921" target="_blank" rel="noopener">Give Online</a>
+        <p style="color: white; font-weight: 500;">You can also give in person during any of our gatherings.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rochester City Church. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
