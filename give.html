@@ -1,4 +1,3 @@
-<!-- give.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,24 +34,47 @@
     }
     .give-hero p {
       font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    .ways-to-give {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .ways-to-give h2 {
+      font-size: 2em;
+      color: #0F40A1;
       margin-bottom: 30px;
     }
-    .give-buttons {
+    .give-options {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
     }
-    .give-buttons a {
+    .give-option {
+      flex: 1 1 300px;
+      max-width: 300px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .give-option h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #0F40A1;
+    }
+    .give-option a {
       display: inline-block;
+      margin-top: 15px;
       background-color: #0F40A1;
       color: white;
-      padding: 15px 30px;
+      padding: 10px 20px;
       border-radius: 5px;
-      font-weight: 600;
       text-decoration: none;
+      font-weight: 600;
     }
-    .give-buttons a:hover {
+    .give-option a:hover {
       background-color: #0c3580;
     }
   </style>
@@ -79,12 +101,23 @@
     <div class="give-hero-overlay">
       <h1>Giving</h1>
       <p>
-        "You must each decide in your heart how much to give. And don’t give reluctantly or in response to pressure. “For God loves a person who gives cheerfully.”"<br />
+        "You must each decide in your heart how much to give. And don’t give reluctantly or in response to pressure. For God loves a person who gives cheerfully."
+        <br />
         <em>2 Corinthians 9:7</em>
       </p>
-      <div class="give-buttons">
-        <a href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1609921" target="_blank" rel="noopener">Give Online</a>
-        <p style="color: white; font-weight: 500;">You can also give in person during any of our gatherings.</p>
+    </div>
+  </section>
+
+  <section class="ways-to-give">
+    <h2>Ways to Give</h2>
+    <div class="give-options">
+      <div class="give-option">
+        <h3>Online Giving</h3>
+        <a href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1609921" target="_blank" rel="noopener">Give Now</a>
+      </div>
+      <div class="give-option">
+        <h3>In-Person</h3>
+        <p>You can give in person during any of our church gatherings.</p>
       </div>
     </div>
   </section>
